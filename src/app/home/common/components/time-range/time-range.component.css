@@ -1,0 +1,12 @@
+/*时间范围表*/
+.time-range {
+  display: inline-block;
+}
+
+.time-range p-calendar {
+  display: inline-block;
+}
+
+.time-range-link {
+  margin: 0 0.2em;
+}

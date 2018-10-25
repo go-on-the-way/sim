@@ -1,0 +1,12 @@
+<div [class]="sliderClass" *ngIf="list && list.length > 0">
+  <i *ngIf="showLeftSlide" class="pi pi-chevron-left cursor-hand left-slide" (click)="leftSlide($event)"></i>
+  <div class="slider-view">
+    <ul>
+      <li *ngFor="let item of list"
+      class="text-overflow cursor-hand"
+      title="{{labelValue(item)}}"
+      (click)="itemClick($event,item)">{{labelValue(item)}}</li>
+    </ul>
+  </div>
+  <i *ngIf="showRightSlide" class="pi pi-chevron-right cursor-hand right-slide" (click)="rightSlide($event)"></i>
+</div>

@@ -1,0 +1,5 @@
+<div class="echart-line--container">
+  <div *ngIf="option !== null" class="echart-line" echarts [options]="lineOption"></div>
+  <img class="error-nodata" *ngIf="option === null" [src]="'./assets/img/error/noData.png'" alt="暂无数据">
+</div>
+

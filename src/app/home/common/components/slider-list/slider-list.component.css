@@ -1,0 +1,68 @@
+
+.text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.cursor-hand:hover {
+  cursor: pointer;
+}
+
+.slider-list {
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+}
+
+.slider-view {
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-list ul {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 0.5em;
+  box-sizing: border-box;
+  list-style: none;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.slider-list .pi {
+  vertical-align: middle;
+}
+
+.slider-list ul li {
+  display: inline-block;
+  width: 14em;
+  padding: 0.2em 0.5em;
+  border-radius: 0.2em;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.active {
+  background: #00a98d;
+  color: #fff;
+}
+
+.left-slide,
+.right-slide {
+  position: absolute;
+  top:0.2em;
+  font-size: 1.5em;
+}
+
+.left-slide {
+  left:0;
+}
+
+.right-slide {
+  right:0;
+}

@@ -1,0 +1,23 @@
+<header class="app-header navbar">
+  <!--<a class="navbar-brand" href="#"></a>-->
+  <a class="navbar-brand" routerLink="/home/">
+    <!-- <img src="assets/img/home/logo.png" height="32px" /> -->
+    <span>系统LOGO</span>
+  </a>
+  <span class="sidebar-toggler" appSidebarToggler></span>
+  <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button" appMobileSidebarToggler>&#9776;</button>
+
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item dropdown" dropdown (onToggle)="toggled($event)">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true"
+        aria-expanded="false" dropdownToggle>
+        <!-- <img src="assets/img/home/user7-128x128.jpg" class="img-avatar" alt="admin"> -->
+        <span class="hidden-md-down">您好！{{accountName}}</span>
+      </a>
+    </li>
+    <li class="nav-item hidden-md-down">
+      <a class="nav-link navbar-toggler aside-menu-toggler" (click)="doLogout()"><i class="fa fa-power-off"></i></a>
+    </li>
+  </ul>
+
+</header>

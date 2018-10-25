@@ -1,0 +1,17 @@
+[
+  {
+    "children": [
+      {
+        "menu": { "title": "数据面板1", "icon": "fa fa-clock-o", "selected": false },
+        "path": "home/dataPanel"
+      }
+    ],
+    "menu": { "title": "数据面板", "icon": "fa fa-clock-o", "selected": false },
+    "path": ""
+  },
+  {
+    "children": [],
+    "menu": { "title": "其他", "icon": "fa fa-heart", "selected": false },
+    "path": "home/dataPanel"
+  }
+]

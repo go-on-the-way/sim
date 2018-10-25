@@ -1,0 +1,17 @@
+<div class="time-range">
+  <p-calendar [(ngModel)]="timeStart"
+  [locale]="locale"
+  showButtonBar="true"
+  (onSelect)="_timeStartOnSelect()"
+  dataType="string"
+  placeholder="请选择开始时间"
+  dateFormat="yy-mm-dd"></p-calendar>
+  <span class="time-range-link">~</span>
+  <p-calendar [(ngModel)]="timeEnd"
+  [locale]="locale"
+  showButtonBar="true"
+  (onSelect)="_timeEndOnSelect()"
+  dataType="string"
+  placeholder="请选择结束时间"
+  dateFormat="yy-mm-dd"></p-calendar>
+</div>

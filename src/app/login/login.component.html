@@ -1,0 +1,47 @@
+<div class="login-main">
+  <!--header-->
+  <header>
+    <!-- <img class="pull-left" src="assets/img/login/logo.png" /> -->
+    <div class="system-name">系统LOGO</div>
+  </header>
+  <!--/.header-->
+
+  <!--content-->
+  <div class="content">
+    <div class="card pull-right">
+      <div class="card-block">
+        <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && doLogin()" novalidate role="form">
+          <div class="form-group title-position">
+            <p class="form-control-static login-title">欢迎登陆系统</p>
+          </div>
+          <div class="form-group title-position">
+            <input name="accountName" [(ngModel)]="account.accountName" #accountName="ngModel" type="text" class="form-control user"
+              placeholder="用户名" autocomplete="off" required/>
+            <span *ngIf="loginForm.submitted && !accountName.valid" class="text-danger">用户名不能为空！</span>
+          </div>
+          <div class="form-group title-position">
+            <input name="password" [(ngModel)]="account.password" #password="ngModel" type="password" class="form-control password" placeholder="密码"
+              autocomplete="off" required minlength="6" maxlength="20" />
+            <span *ngIf="loginForm.submitted && !password.valid" class="text-danger">密码不能为空，且长度必须为6~20位!</span>
+          </div>
+          <div class="checkbox title-position">
+            <label></label>
+            <label style="position: absolute;right:20px">
+              <a href="/resetPassword" target="_blank">忘记密码</a>
+            </label>
+          </div>
+          <button id="login" type="submit" class="ui-button-info title-position">登录</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--/.content-->
+
+  <!--footer-->
+  <footer>
+    <!-- <p><img src="assets/img/login/version.png" class="system-version"/>Copyright © Rivamed Corporation, All Rights Reserved &nbsp;&nbsp;V1.0.4</p> -->
+  </footer>
+  <!--/.footer-->
+
+  <p-confirmDialog></p-confirmDialog>
+</div>
