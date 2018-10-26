@@ -1,1 +1,148 @@
 第一个页面！
+<h6>增加SVG图标:</h6>
+<span style="font-size:6em;">
+  <svg class="svg-icon" aria-hidden="true">
+    <use xlink:href="#icon-neirong-chongzu"></use>
+  </svg>
+</span>
+<h6>布局</h6>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      One of four columns
+    </div>
+    <div class="col-sm">
+      One of four columns
+    </div>
+    <div class="col-sm">
+      One of four columns
+    </div>
+    <div class="col-sm">
+      One of four columns
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-5">
+      2 of 3 (wider)
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+      1 of 3
+    </div>
+    <div class="col-md-auto">
+      Variable width content
+    </div>
+    <div class="col col-lg-2">
+      3 of 3
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-md-auto">
+      Variable width content
+    </div>
+    <div class="col col-lg-2">
+      3 of 3
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="w-100"></div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+</div>
+<hr>
+<div class="row">
+  <div class="col">col-1/13</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+</div>
+<hr>
+<div class="container">
+  <div class="row align-items-start" style="height:60px;background: #555;color: #fff;">
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+  </div>
+  <hr>
+  <div class="row align-items-center" style="height:60px;background: #555;color: #fff;">
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+  </div>
+  <hr>
+  <div class="row align-items-end" style="height:60px;background: #555;color: #fff;">
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+  </div>
+</div>
+<h6>no-gutters</h6>
+<div class="row no-gutters">
+  <div class="col-12 col-sm-6 col-md-8">.col-12 .col-sm-6 .col-md-8</div>
+  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+</div>
+<input type="text" placeholder="请输入" >
+<input type="text" pInputText />
+<p-fileUpload
+  name="myfile[]"
+  customUpload="true"
+  chooseLabel="选择"
+  (uploadHandler)="uploader($event)"></p-fileUpload>

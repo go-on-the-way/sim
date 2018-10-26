@@ -15,6 +15,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { MessagesModule } from 'primeng/messages';
 import { GrowlModule } from 'primeng/growl';
 import { SharedModule } from 'primeng/shared';
+import { FileUploadModule } from 'primeng/fileupload';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { SharedModule } from 'primeng/shared';
     ConfirmDialogModule,
     MessagesModule,
     GrowlModule,
-    SharedModule
+    SharedModule,
+    FileUploadModule
   ],
   exports:[
     CommonModule,
@@ -51,7 +53,8 @@ import { SharedModule } from 'primeng/shared';
     ConfirmDialogModule,
     MessagesModule,
     GrowlModule,
-    SharedModule
+    SharedModule,
+    FileUploadModule
   ],
   declarations: [ ]
 })

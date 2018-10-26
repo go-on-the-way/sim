@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-panel.component.scss']
 })
 export class DataPanelComponent implements OnInit {
+
+  public files:FileList;
+
+  public uploader($event) {
+    console.log(this.files);
+  }
+
   constructor() {}
 
   ngOnInit() {}
