@@ -23,6 +23,7 @@ import {
 } from '../shared/directives/sidebar.directive';
 
 import { DataPanelComponent } from './dataPanel/data-panel.component';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DataPanelComponent } from './dataPanel/data-panel.component';
     MobileSidebarToggleDirective,
     BreadcrumbComponent,
     HomeComponent,
-    DataPanelComponent
+    DataPanelComponent,
+    DemoComponent
   ],
   imports: [
     CommonModule,

@@ -4,27 +4,18 @@ import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/do';
 
 @Injectable()
-
 export class RequestInterceptor implements HttpInterceptor {
 
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    return next.handle(req).do((event: HttpEvent<any>) => {
+        if (event instanceof HttpResponse) { }
+    }, (err: any) => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 404) {
 
-        if (sessionStorage.getItem('currentUser')
-            && JSON.parse(sessionStorage.getItem('currentUser'))['user']) {
-              if(req.body){
-                req.body['userId'] = JSON.parse(sessionStorage.getItem('currentUser'))['user'].userId;
-                req.body['vendorId'] = JSON.parse(sessionStorage.getItem('currentUser'))['user'].orgCode;
-              }
         }
+      }
+    });
+  }
 
-        return next.handle(req).do((event: HttpEvent<any>) => {
-            if (event instanceof HttpResponse) { }
-        }, (err: any) => {
-            if (err instanceof HttpErrorResponse) {
-                if (err.status === 404) {
-
-                }
-            }
-        });
-    }
 }

@@ -10,11 +10,12 @@ import {
 @Injectable()
 export class Guard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        let current = sessionStorage.getItem('currentUser');
-        if (current && current.length) {
-            return true;
-        } else {
-            return false;
-        }
+        return true;
+        // let current = sessionStorage.getItem('currentUser');
+        // if (current && current.length) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
     }
 }

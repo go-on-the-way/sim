@@ -1,10 +1,10 @@
 <header class="app-header navbar">
   <!--<a class="navbar-brand" href="#"></a>-->
   <a class="navbar-brand" routerLink="/home/">
-    <!-- <img src="assets/img/home/logo.png" height="32px" /> -->
+    <img src="assets/img/home/logo.png" height="32px" />
     <span>系统LOGO</span>
   </a>
-  <span class="sidebar-toggler" appSidebarToggler></span>
+  <span class="sidebar-toggler" appSidebarToggler>&#9776;</span>
   <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button" appMobileSidebarToggler>&#9776;</button>
 
   <ul class="nav navbar-nav ml-auto">
@@ -19,5 +19,4 @@
       <a class="nav-link navbar-toggler aside-menu-toggler" (click)="doLogout()"><i class="fa fa-power-off"></i></a>
     </li>
   </ul>
-
 </header>

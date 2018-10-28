@@ -5,10 +5,9 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
-//import { CrudModule } from './shared/crud/crud.module';
 import { UiCommonModule } from './shared/modules/ui-common/ui-common.module';
 
-import { Guard } from './Guard';
+import { Guard } from './router-guard';
 import { RequestInterceptor } from './request-interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +23,6 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     AppRoutingModule,
     UiCommonModule
-    //CrudModule.forRoot(),
   ],
   providers: [Guard, {
     provide: HTTP_INTERCEPTORS,

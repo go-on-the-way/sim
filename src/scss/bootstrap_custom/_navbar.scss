@@ -91,3 +91,12 @@ header.navbar {
 .navbar-divider {
   background-color: rgba(0,0,0,.075);
 }
+
+.app-header.navbar {
+  .sidebar-toggler{
+    &:hover {
+      cursor: pointer;
+    }
+    line-height: $navbar-height;
+  }
+}

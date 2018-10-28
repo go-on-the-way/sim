@@ -15,6 +15,8 @@ export class DataPanelComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
 }

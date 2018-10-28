@@ -3,7 +3,11 @@
     "children": [
       {
         "menu": { "title": "数据面板1", "icon": "fa fa-clock-o", "selected": false },
-        "path": "home/dataPanel"
+        "path": "home/dataPanel",
+        "children": [{
+          "menu":{"title": "数据面板1-1", "icon": "fa fa-clock-o", "selected": false},
+          "path": ""
+        }]
       }
     ],
     "menu": { "title": "数据面板", "icon": "fa fa-clock-o", "selected": false },
@@ -12,6 +16,6 @@
   {
     "children": [],
     "menu": { "title": "其他", "icon": "fa fa-heart", "selected": false },
-    "path": "home/dataPanel"
+    "path": "home/demo"
   }
 ]
