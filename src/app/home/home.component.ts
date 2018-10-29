@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 
 import { HttpClient } from '@angular/common/http';
 import { MenuService } from '../shared/services/menu.service';
+import { GrowlService } from '../shared/services/growl.service';
 import { ASYNC_URLS } from '../app-url';
 
 @Component({
@@ -16,9 +17,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   public showProgressBar: boolean;
 
   constructor(
+    private http: HttpClient,
     private menuService: MenuService,
-    private http: HttpClient) {
+    private growlService:GrowlService) {
+
+    this.growlService.growl.hide();
     this.showProgressBar = false;
+
   }
 
   ngOnInit(): void {

@@ -139,10 +139,12 @@
   <div class="col-12 col-sm-6 col-md-8">.col-12 .col-sm-6 .col-md-8</div>
   <div class="col-6 col-md-4">.col-6 .col-md-4</div>
 </div>
-<input type="text" placeholder="请输入" >
 <input type="text" pInputText />
 <p-fileUpload
   name="myfile[]"
   customUpload="true"
   chooseLabel="选择"
   (uploadHandler)="uploader($event)"></p-fileUpload>
+
+<p-button label="message123" (onClick)="showMessage()"></p-button>
+<p-button label="message124" (onClick)="showMessage1()"></p-button>

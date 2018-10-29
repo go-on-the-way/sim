@@ -7,7 +7,28 @@
         "children": [{
           "menu":{"title": "数据面板1-1", "icon": "fa fa-clock-o", "selected": false},
           "path": ""
+        },{
+          "menu":{"title": "数据面板1-2", "icon": "fa fa-clock-o", "selected": false},
+          "path": ""
+        },{
+          "menu":{"title": "数据面板1-3", "icon": "fa fa-clock-o", "selected": false},
+          "path": ""
+        },{
+          "menu":{"title": "数据面板1-4", "icon": "fa fa-clock-o", "selected": false},
+          "path": ""
         }]
+      },{
+        "menu":{"title": "数据面板2", "icon": "fa fa-clock-o", "selected": false},
+        "path": ""
+      },{
+        "menu":{"title": "数据面板3", "icon": "fa fa-clock-o", "selected": false},
+        "path": ""
+      },{
+        "menu":{"title": "数据面板4", "icon": "fa fa-clock-o", "selected": false},
+        "path": ""
+      },{
+        "menu":{"title": "数据面板5", "icon": "fa fa-clock-o", "selected": false},
+        "path": ""
       }
     ],
     "menu": { "title": "数据面板", "icon": "fa fa-clock-o", "selected": false },

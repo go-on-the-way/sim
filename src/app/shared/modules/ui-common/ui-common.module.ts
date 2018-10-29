@@ -7,6 +7,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
 import { DataTableModule } from 'primeng/datatable';
 import { PanelModule } from 'primeng/panel';
 import { TabViewModule } from 'primeng/tabview';
@@ -27,6 +29,8 @@ import { FileUploadModule } from 'primeng/fileupload';
     DropdownModule,
     CalendarModule,
     ButtonModule,
+    TableModule,
+    PaginatorModule,
     DataTableModule,
     PanelModule,
     TabViewModule,
@@ -46,6 +50,8 @@ import { FileUploadModule } from 'primeng/fileupload';
     DropdownModule,
     CalendarModule,
     ButtonModule,
+    TableModule,
+    PaginatorModule,
     DataTableModule,
     PanelModule,
     TabViewModule,

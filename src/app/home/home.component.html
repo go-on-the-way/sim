@@ -12,4 +12,12 @@
     </div><!-- /.conainer-fluid -->
   </main>
 </div>
+<!--公共确认对话框-->
 <p-confirmDialog acceptLabel="确定" rejectLabel="取消"></p-confirmDialog>
+<!--公共消息框-->
+<p-growl
+  [value]="growlService.growl.msgs"
+  [sticky]="growlService.growl.sticky"
+  [life]="growlService.growl.life"
+  [style]="growlService.growl.style"
+  [styleClass]="growlService.growl.styleClass"></p-growl>

@@ -3,6 +3,11 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 import { filter } from 'rxjs/operators';
 
+interface IBreadcrumb {
+  label: any;
+  url: string; // 跳转的url
+}
+
 @Component({
   selector: 'app-breadcrumb',
   template: `<ol class="breadcrumb">
@@ -15,43 +20,62 @@ import { filter } from 'rxjs/operators';
   </ol>`
 })
 export class BreadcrumbComponent implements OnInit {
-  breadcrumbs: Array<Object>;
+  breadcrumbs: IBreadcrumb[];
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private location:Location) {
-    this.breadcrumbs = [];
+      this.init();
   }
 
-  ngOnInit(): void {
-    console.log('------面包屑初始化------');
+
+  ngOnInit(): void {}
+
+  private init(){
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).
     subscribe(event => {
-      console.log(this.location.path());
-      debugger;
       this.breadcrumbs = [];
       let currentRoute = this.route.root,
         url = '';
-      do {
-        const childrenRoutes = currentRoute.children;
-        currentRoute = null;
-        childrenRoutes.forEach(route => {
-          if (route.outlet === 'primary') {
-            const routeSnapshot = route.snapshot;
-            url += '/' + routeSnapshot.url.map(segment => segment.path).join('/');
-
-            if (routeSnapshot.data.title) {
-              this.breadcrumbs.push({
-                label: routeSnapshot.data,
-                url: url.replace('//', '/')
-              });
-            }
-            currentRoute = route;
-          }
-        });
-      } while (currentRoute);
-      console.log(this.breadcrumbs);
+      this.getBreadcrumbs(currentRoute,url,this.breadcrumbs);
     });
   }
+
+  /**
+   * 获取面包屑
+   * @param route
+   * @param url
+   * @param breadcrumbs
+   */
+  private getBreadcrumbs(route:ActivatedRoute,url: string = "", breadcrumbs:IBreadcrumb[]){
+    let children: ActivatedRoute[] = route.children;
+    if(children.length === 0){
+      return breadcrumbs;
+    }
+
+    for (let child of children) {
+      if (child.outlet !== 'primary') {
+        continue;
+      }
+
+      let routeUrl:string = child.snapshot.url.map(segment => segment.path).join('/');
+      url += `/${routeUrl}`;
+
+      if(child.snapshot.data.title){
+        this.breadcrumbs.push({
+          label: child.snapshot.data,
+          url: url.replace('//', '/')
+        });
+      }
+
+      //递归调用
+      return this.getBreadcrumbs(child, url, breadcrumbs);
+
+    }
+
+    return this.breadcrumbs;
+
+  }
+
 }
