@@ -15,15 +15,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   public initProgress: number;
   public showProgressBar: boolean;
+  public growlService: GrowlService;
 
   constructor(
     private http: HttpClient,
-    private menuService: MenuService,
-    private growlService:GrowlService) {
-
-    this.growlService.growl.hide();
-    this.showProgressBar = false;
-
+    private menuService: MenuService) {
+      this.showProgressBar = false;
+      this.growlService = new GrowlService();
   }
 
   ngOnInit(): void {
