@@ -6,7 +6,7 @@ import { Growl } from '../class/growl';
 })
 export class GrowlService {
 
-  public growl:Growl;
+  public growl: Growl;
 
   constructor() {
     this.growl = Growl.Instance;

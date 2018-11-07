@@ -13,7 +13,7 @@ import { TimeRangeComponent } from './time-range.component';
     GrowlModule,
     CalendarModule
   ],
-  exports:[TimeRangeComponent],
+  exports: [TimeRangeComponent],
   declarations: [TimeRangeComponent]
 })
 export class TimeRangeModule { }

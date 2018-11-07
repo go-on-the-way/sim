@@ -11,14 +11,14 @@ const routes: Routes = [
     data: { title: '首页' },
     children: [
       { path: '', redirectTo: 'dataPanel', pathMatch: 'full' },
-      { path: 'dataPanel', data:{ title:'数据面板' },component: DataPanelComponent},
-      { path: 'demo', data:{ title:'其他' },component: DemoComponent }
+      { path: 'dataPanel', data: { title: '数据面板' }, component: DataPanelComponent },
+      { path: 'demo', data: { title: '其他' }, component: DemoComponent }
     ]
   }
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class HomeRoutingModule { }

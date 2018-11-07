@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Renderer, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private globalKeyPressCallbackFn: Function;
 
   constructor(
-    private renderer: Renderer,
+    private renderer: Renderer2,
     private elementRef: ElementRef
   ) {}
 

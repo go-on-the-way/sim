@@ -7,7 +7,7 @@ export const ASYNC_URLS = {
   'accountList': PATH + 'rmApi/userManage/account/listAccountAllInfo', // 查询用户列表或者根据条件查询
   'rolesList': PATH + 'rmApi/userManage/role/list', // 查询角色列表或者根据条件查询
   'accountGroupsList': PATH + 'rmApi/userManage/group/list', // 查询用户组列表或者根据条件查询
-  'tableList':"assets/json/table.json"
+  'tableList': 'assets/json/table.json'
 };
 
 export const DICT_URLS = {

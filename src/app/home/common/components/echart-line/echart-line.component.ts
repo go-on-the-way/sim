@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 
@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   templateUrl: './echart-line.component.html',
   styleUrls: ['./echart-line.component.css']
 })
-export class EchartLineComponent implements OnInit {
+export class EchartLineComponent implements OnInit, OnChanges {
 
-  @Input() option:object;
+  @Input() option: object;
 
-  private lineOption:object;
+  private lineOption: object;
 
   constructor() { }
 
@@ -20,7 +20,7 @@ export class EchartLineComponent implements OnInit {
   }
 
   ngOnChanges() {
-    this.lineOption = _.assign({},this.option);
+    this.lineOption = _.assign({}, this.option);
   }
 
 }

@@ -25,21 +25,21 @@ export class BreadcrumbComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private location:Location) {
-      this.init();
+    private location: Location) {
+    this.init();
   }
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  private init(){
+  private init() {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).
-    subscribe(event => {
-      this.breadcrumbs = [];
-      let currentRoute = this.route.root,
-        url = '';
-      this.getBreadcrumbs(currentRoute,url,this.breadcrumbs);
-    });
+      subscribe(event => {
+        this.breadcrumbs = [];
+        let currentRoute = this.route.root,
+          url = '';
+        this.getBreadcrumbs(currentRoute, url, this.breadcrumbs);
+      });
   }
 
   /**
@@ -48,9 +48,9 @@ export class BreadcrumbComponent implements OnInit {
    * @param url
    * @param breadcrumbs
    */
-  private getBreadcrumbs(route:ActivatedRoute,url: string = "", breadcrumbs:IBreadcrumb[]){
+  private getBreadcrumbs(route: ActivatedRoute, url: string = '', breadcrumbs: IBreadcrumb[]) {
     let children: ActivatedRoute[] = route.children;
-    if(children.length === 0){
+    if (children.length === 0) {
       return breadcrumbs;
     }
 
@@ -59,17 +59,17 @@ export class BreadcrumbComponent implements OnInit {
         continue;
       }
 
-      let routeUrl:string = child.snapshot.url.map(segment => segment.path).join('/');
+      let routeUrl: string = child.snapshot.url.map(segment => segment.path).join('/');
       url += `/${routeUrl}`;
 
-      if(child.snapshot.data.title){
+      if (child.snapshot.data.title) {
         this.breadcrumbs.push({
           label: child.snapshot.data,
           url: url.replace('//', '/')
         });
       }
 
-      //递归调用
+      // 递归调用
       return this.getBreadcrumbs(child, url, breadcrumbs);
 
     }
