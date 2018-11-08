@@ -41,7 +41,7 @@ import { FileUploadModule } from 'primeng/fileupload';
     SharedModule,
     FileUploadModule
   ],
-  exports:[
+  exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -62,6 +62,6 @@ import { FileUploadModule } from 'primeng/fileupload';
     SharedModule,
     FileUploadModule
   ],
-  declarations: [ ]
+  declarations: []
 })
 export class UiCommonModule { }

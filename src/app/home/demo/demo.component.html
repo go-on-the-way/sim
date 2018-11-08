@@ -1,59 +1,62 @@
 <h6>表格展示：</h6>
-<p-table
-  [columns]="dt.cols"
-  [value]="dt.args.pm.pageData"
-  [rowHover]="true"
-  [rowsPerPageOptions]="dt.args.pm.pageList"
-  totalRecords="dt.args.pm.total"
-  [responsive]="true"
-  [resizableColumns]="true"
-  [autoLayout]="false"
-  [lazy]="true"
-  (onPage)="onPage(dataTable)"
-  (onRowSelect) = "onRowSelect($event)"
-  selectionMode="multiple"
-  dataKey="id">
-  <ng-template pTemplate="header" let-columns>
-    <tr class="table-thead">
-      <th style="width: 30px;">
-        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-      </th>
-      <th *ngFor="let col of columns">
-        {{col.header}}
-      </th>
-    </tr>
-    <tr *ngIf="!dt.args.pm.pageData || dt.args.pm.pageData.length === 0">
-      <td [attr.colspan]="columns.length + 1">暂无数据</td>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-rowData let-columns="columns">
-    <tr [pSelectableRow]="rowData" *ngIf="rowData !== null" [pContextMenuRow]="rowData">
-      <td>
-        <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
-      </td>
-      <td *ngFor="let col of columns" [ngSwitch]="col.field">
-        <div *ngSwitchCase="'operate'">
-          <p-button label="操作" icon="fa fa-check" iconPos="left"></p-button>
-        </div>
-        <!-- <div *ngSwitchCase="'status'">
-          {{ rowData[col.field] | dictTransform:nodeStatusMap }}
-        </div> -->
-        <div *ngIf="col.field !== 'operate' && col.field !== 'status'">
-          {{rowData[col.field]}}
-        </div>
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
-<p-paginator [rows]="dt.args.pm.rows" [totalRecords]="dt.args.pm.total" [rowsPerPageOptions]="dt.args.pm.pageList" [pageLinkSize]="10" (onPageChange)="onPage(dataTable)"></p-paginator>
-<!--页码相关-->
-<!-- <div class="page-div">
-  <div class="page-total"><span>共<span> {{dt.args.pm.total}} </span>条记录 第<span> {{dt.args.pm.pageNo}} </span>/<span> {{dt.args.pm.totalPage}} </span>页</span></div>
-  <div class="page-change">
-    <form #pageForm="ngForm" (ngSubmit)="gotoPage(dataTable)">
-      <span style="position: relative;top: -49px;"><span>跳至</span><span>
-      <input name="page" type="text" class="page-input" [(ngModel)]="page"></span><span>页</span></span>
-      <span style="display: none"><input type="submit"></span>
-    </form>
+<div class="table-module">
+  <p-table [columns]="dt.cols" [value]="dt.value" [rowHover]="true" [responsive]="true" [resizableColumns]="true"
+    [autoLayout]="true" (onRowSelect)="rowSelect($event)" (onRowUnselect)="rowUnselect($event)" [(selection)]="dt.selections">
+    <ng-template pTemplate="header" let-columns>
+      <tr class="table-thead">
+        <th style="width: 30px;">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+      <tr *ngIf="!dt.hasValue()">
+        <td class="table-nodata" [attr.colspan]="columns.length + 1">暂无数据</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr [pSelectableRow]="rowData" *ngIf="rowData !== null" [pContextMenuRow]="rowData">
+        <td>
+          <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+        </td>
+        <td *ngFor="let col of columns" [ngSwitch]="col.field">
+          <div *ngSwitchCase="'operate'">
+            <p-button label="操作" icon="fa fa-check" iconPos="left"></p-button>
+          </div>
+          <div *ngIf="col.field !== 'operate'">
+            {{rowData[col.field]}}
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <div *ngIf="dt.hasValue()" class="table-paginator">
+    <p-paginator [rows]="dt.args.pm.rows" [totalRecords]="dt.args.pm.total" [rowsPerPageOptions]="dt.args.pm.pageList"
+      [pageLinkSize]="10" (onPageChange)="dt.onPage($event)"></p-paginator>
+    <div class="page-total">
+      <span>共<span> {{dt.args.pm.total}} </span>条记录 第
+        <span> {{dt.args.pm.page}} </span>/
+        <span>{{dt.args.pm.totalPage}} </span>页
+      </span>
+    </div>
+    <div class="page-change">
+      <form (ngSubmit)="dt.toPage()">
+        <span>
+          <span>跳至</span>
+          <span>
+            <input class="page-input" autocomplete="off" type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="dt.args.pm.toPage">
+          </span>
+          <span>页</span>
+        </span>
+        <span style="display: none"><input type="submit"></span>
+      </form>
+    </div>
   </div>
-</div> -->
+</div>
+
+<h6>对话框</h6>
+<button type="text" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Show"></button>
+<p-dialog header="对话框" [(visible)]="displayDialog">
+  Content
+</p-dialog>

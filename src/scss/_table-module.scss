@@ -1,0 +1,112 @@
+
+$white:#fff;
+$tbBorderColor:#d9d9d9;
+$tbHeadH:3em;
+$tbBodyH:4em;
+$tbHeadColor:$white;
+$tbHeadBgColor:rgba(0,53,75,1);
+$tbBodyColor:rgba(51,51,51,1);
+$tbBodyHoverBgColor:rgba(236,242,248,1);
+$tbPaginatorBorderColor:rgba(217,215,223,1);
+$tbPaginatorActiveBg:rgba(0,127,169,1);
+$tbPaginatorActiveBorderColor:rgba(183,188,200,1);
+
+.table-module {
+  position: relative;
+  font-size: 1em;
+  // primeng样式复写
+  // 头部样式
+  .ui-table .ui-table-thead > tr > th {
+    height:$tbHeadH;
+    color: $tbHeadColor;
+    border: none;
+    background:$tbHeadBgColor;
+  }
+
+  // body样式
+  .ui-table .ui-table-tbody > tr > td {
+    height: $tbBodyH;
+    color: $tbBodyColor;
+    border: none;
+  }
+
+  .ui-table.ui-table-hoverable-rows .ui-table-tbody > tr:not(.ui-state-highlight):hover {
+    background: $tbBodyHoverBgColor;
+  }
+
+  // 页码样式
+  .ui-paginator.ui-widget.ui-widget-header {
+    border: none;
+    background: $white;
+  }
+
+  .ui-paginator .ui-paginator-page,
+  .ui-paginator .ui-paginator-pages,
+  .ui-paginator .ui-paginator-next,
+  .ui-paginator .ui-paginator-last,
+  .ui-paginator .ui-paginator-first,
+  .ui-paginator .ui-paginator-prev,
+  .ui-paginator .ui-paginator-current {
+    padding: 0.25em 0.7em;
+    margin:0;
+    border-radius:0;
+  }
+
+  .ui-paginator .ui-dropdown {
+    margin-left: 0;
+  }
+
+  .ui-paginator .ui-paginator-pages {
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .ui-paginator .ui-paginator-page {
+    border-right: none;
+  }
+
+  .ui-paginator .ui-paginator-page.ui-state-active {
+    border-color: $tbPaginatorActiveBorderColor;
+    background: $tbPaginatorActiveBg;
+
+  }
+
+  // 其他样式
+  .table-nodata {
+    padding: 0.5em;
+    text-align: center;
+    border:1px solid $tbBorderColor;
+  }
+
+  .table-paginator {
+    position: relative;
+    padding: 0.5em 0;
+    border:1px solid $tbPaginatorBorderColor;
+    border-left: none;
+    border-right: none;
+    background: $white;
+  }
+
+  .page-total, .page-change {
+    position: absolute;
+    bottom: 1em;
+    display: inline-block;
+  }
+
+  .page-total {
+    left: 0;
+    margin-left: 2em;
+  }
+
+  .page-change {
+    right: 0;
+    margin-right: 2em;
+    .page-input {
+      display: inline-block;
+      width: 3em;
+      height: 1.5em;
+      margin: 0 0.5em;
+      text-align: center;
+    }
+  }
+}

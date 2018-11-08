@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataTable } from '../../shared/class/data-table';
 import { AjaxService } from '../../shared/services/ajax.service';
+import { PageModel } from '../../shared/class/page-model';
 
 @Component({
   selector: 'app-demo',
@@ -10,11 +11,14 @@ import { AjaxService } from '../../shared/services/ajax.service';
 export class DemoComponent implements OnInit {
 
   public dt: DataTable;
+  public pageModel = new PageModel(1, [1, 20, 30, 40, 50]);
+  public displayDialog: boolean;
 
   constructor(private ajaxService: AjaxService) {
 
     this.dt = new DataTable({
-      url: 'tableList'
+      url: 'tableList',
+      pm: this.pageModel
     }, ajaxService);
 
     this.dt.cols = [
@@ -23,17 +27,24 @@ export class DemoComponent implements OnInit {
       { field: 'name3', header: '名字3' },
       { field: 'name4', header: '名字4' }
     ];
+
+    this.displayDialog = false;
   }
 
   ngOnInit() {
+    this.dt.renderTable();
   }
 
-  public onPage() {
-
+  public rowSelect($event) {
+    console.log(this.dt.selections);
   }
 
-  public onRowSelect() {
+  public rowUnselect() {
+    console.log(this.dt.selections);
+  }
 
+  public showDialog() {
+    this.displayDialog = true;
   }
 
 }

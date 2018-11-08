@@ -10,6 +10,8 @@ export class PageModel {
   pageData: Array<any>;        // 响应的数据内容，对应response数据的pageData
   totalPage: number;           // 总共的页数
 
+  toPage: number;               // 跳转的页码
+
   constructor(page?: number, pageList?: Array<number>) {
     this.pageList = pageList || [10, 20, 30, 40, 50];
     this.page = page || 1;
