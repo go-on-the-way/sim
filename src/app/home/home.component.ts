@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private http: HttpClient,
     private menuService: MenuService) {
-      this.showProgressBar = false;
-      this.growlService = new GrowlService();
+    this.showProgressBar = false;
+    this.growlService = new GrowlService();
   }
 
   ngOnInit(): void {

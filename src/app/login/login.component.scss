@@ -1,197 +1,118 @@
 /* ==============================================
  * login page style
- * @Auth: lifei
- * @Date: 2017/2/17
+ * @Auth: wlei
+ * @Date: 2018/11/09
  * ==============================================*/
 
- $body-bg-image: url("assets/img/login/login.png");
+ $body-bg-img: url("../../assets/img/login/login.png");
+ $title-bg-img:url("../../assets/img/login/title_bg.png");
+ $lock-active-img:url("../../assets/img/login/lock_active.png");
+ $lock-inactive-img:url("../../assets/img/login/lock_inactive.png");
+ $user-active-img:url("../../assets/img/login/user_active.png");
+ $user-inactive-img:url("../../assets/img/login/user_inactive.png");
+ $white:#fff;
 
-/* ----------------------------------------------
- * Core: Genral Layout Style
- * ---------------------------------------------- */
 .login-main {
-  display: table;
   height: 100vh;
   width: 100%;
   min-width: 70em;
-  background-color: #ffffff;
+  background-color: $white;
 }
 
-header, .content, footer {
-  display: table-row;
-}
-
-/* ----------------------------------------------
- * header
- * ---------------------------------------------- */
-header {
-  height: 100px;
-}
-
-header > .pull-left {
-  margin: 10px;
-  padding: 10px 0;
-  height: 80px;
-  background: #fff;
-  position: relative;
-  left: 15%;
-}
-
-header > .pull-right {
-  height: 33px;
-  line-height: 33px;
-  margin: 28px 9% 28px auto;
-}
-
-header span:first-of-type {
-  font-size: 16px;
-  color: #7f8589;
-}
-
-header span:last-of-type {
-  color: #696969;
-  vertical-align: -moz-calc(1px);
-  vertical-align: -webkit-calc(1px);
-  vertical-align: calc(1px);
-}
-
-/* ----------------------------------------------
- * content
- * ---------------------------------------------- */
-.content {
-  height: 100%;
-  background: transparent url(../../assets/img/login/login.png) no-repeat center center / cover;
-}
-
-.content > .card {
-  width: 400px;
-  height: 340px;
-  min-width: 15em;
-  margin: 10% 15%;
-}
-
-.title-position {
-  position: relative;
-  top: -80px;
-}
-
-.login-title {
-  font-size: 24px;
-  text-align: center;
-  color: #fff;
-  background: transparent url(../../assets/img/login/title_bg.png) no-repeat;
-  height: 66px;
-  line-height: 54px;
-  background-size: 100% 66px;
-  letter-spacing: 2px;
-}
-
-.code-in {
-  float: left;
-  //display: inline-block;
-  position: relative;
-  width: -webkit-calc(100% - 103px);
-  width: -moz-calc(100% - 103px);
-  width: calc(100% - 103px);
-}
-
-.code-box {
-  width: 100px;
-  height: 34px;
-  float: left;
-  //display: inline-block;
-  border: 1px solid #e6e8e9;
-  border-radius: 3px;
-  margin-left: 8px;
-}
-
-/*.checkbox {
-  margin-top: 4.5em;
-}*/
-
-.user {
-  //background: transparent url("../../assets/img/login/user_inactive.png") no-repeat center left .8rem / 1.125rem 1.125rem;
-  background: transparent url("../../assets/img/login/user_inactive.png") no-repeat center left .8rem / 1rem 1rem;
-  padding-left: 2.5rem;
-}
-.user:focus {
-  background-image: url("../../assets/img/login/user_active.png");
-}
-
-.password {
-  //background: transparent url("../../assets/img/login/lock_inactive.png") no-repeat center left .8rem / 1.125rem 1.125rem;
-  background: transparent url("../../assets/img/login/lock_inactive.png") no-repeat center left .8rem / 1rem 1rem;
-  padding-left: 2.5rem;
-}
-.password:focus {
-  background-image: url("../../assets/img/login/lock_active.png");
-}
-
-.btn-block {
-  margin: 1.3em 0;
-}
-
-.form-control {
-  border-radius: 5px;
-  height: 48px;
-}
-
-.form-control-static {
-  padding-bottom: 0;
-}
-
-/* ----------------------------------------------
- * footer
- * ---------------------------------------------- */
-footer {
-  height: 100px;
-  text-align: center;
-}
-
-footer p:first-of-type {
-  margin-top: 2%;
-}
-
-footer p {
-  color: #6f6f6f;
-}
-
-.autoCode {
-  width: 50%;
-  display:inline-block;
-}
-
-.form-group {
-  margin: 2rem 0;
-}
-
-.ui-button-info {
-  width: 100%;
-  height: 42px;
-  margin: 10px 0;
-  border: 0;
-  border-radius: 5px;
-  background: #00a98d;
-  color: #fff;
-  font: 20px bold;
-}
-
-.ui-button-info:hover {
-  background: #2399e5;
+.system-logo {
+  display: inline-block;
+  height: 60%;
+  margin-right: 0.5rem;
+  margin-left: 15%;
 }
 
 .system-name {
-  height: 100px;
-  line-height: 110px;
-  font-size: 24px !important;
-  font-weight: 500;
-  letter-spacing: 2px;
-  position: relative;
-  left: 15%;
+  display: inline-block;
+  margin: 0;
+  font-size: 1.5rem;
 }
 
-.system-version {
-  height: 20px;
-  margin: 0 5px;
-  border-radius: 3px;
+.login-header {
+  display: flex;
+  height: 6em;
+  align-items: center;
+}
+
+.login-body {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: $body-bg-img center center no-repeat;
+  background-size: 100% 100%;
+}
+
+.login-footer {
+  position: fixed;
+  bottom: 0;
+  margin-top:1em;
+  width: 100%;
+  text-align: center;
+  p {
+    margin-top:1rem;
+  }
+}
+
+.login-content {
+  position: relative;
+  width:30rem;
+  height: 60%;
+  margin-right: 15%;
+}
+
+.login-title {
+  position: absolute;
+  top: -1em;
+  left: 10%;
+  width: 80%;
+  padding: 1rem 0.5rem;
+  margin:0;
+  font-size: 1.5rem;
+  color: $white;
+  text-align: center;
+  background: $title-bg-img center center no-repeat;
+  background-size: 100% 100%;
+}
+
+.user-bg-img--inactive {
+  background: $user-inactive-img left center no-repeat!important;
+}
+
+.user-bg-img--active {
+  background: $user-active-img left center no-repeat!important;
+}
+
+.password-bg-img--inactive {
+  background: $lock-inactive-img left center no-repeat!important;
+}
+
+.user-bg-img--active {
+  background: $lock-active-img left center no-repeat!important;
+}
+
+.form-container {
+  padding: 4rem 1.25rem 1.25rem 1.25rem;
+  background: $white;
+
+  .input-text {
+    padding: 1rem 0.5rem 1rem 1rem;
+    border-radius: 0.4rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 0.5rem 0;
+    margin: 1rem 0;
+    border: 0;
+    font-size: 1.5rem;
+    color: $white;
+    border-radius: 0.2rem;
+    background: #00a98d;
+    cursor: pointer;
+  }
+
 }
