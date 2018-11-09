@@ -54,7 +54,7 @@ export class DataTable {
    *  页码跳转
    */
   public toPage() {
-    if (!Number(this.args.pm.toPage)) { return; }
+    if (!Number(this.args.pm.toPage) || this.args.pm.toPage > this.args.pm.totalPage) { return; }
     this.args.pm.page = this.args.pm.toPage;
     this.args.pm.toPage = null; // 跳转页码后做还原处理
     this.renderTable();

@@ -1,4 +1,4 @@
-<h6>表格展示：</h6>
+<h6>表格示例</h6>
 <div class="table-module">
   <p-table [columns]="dt.cols" [value]="dt.value" [rowHover]="true" [responsive]="true" [resizableColumns]="true"
     [autoLayout]="true" (onRowSelect)="rowSelect($event)" (onRowUnselect)="rowUnselect($event)" [(selection)]="dt.selections">
@@ -11,7 +11,9 @@
           {{col.header}}
         </th>
       </tr>
-      <tr *ngIf="!dt.hasValue()">
+    </ng-template>
+    <ng-template pTemplate="emptymessage" let-columns>
+      <tr>
         <td class="table-nodata" [attr.colspan]="columns.length + 1">暂无数据</td>
       </tr>
     </ng-template>
@@ -24,7 +26,7 @@
           <div *ngSwitchCase="'operate'">
             <p-button label="操作" icon="fa fa-check" iconPos="left"></p-button>
           </div>
-          <div *ngIf="col.field !== 'operate'">
+          <div *ngIf="col.field !== 'operate'" title="{{rowData[col.field]}}">
             {{rowData[col.field]}}
           </div>
         </td>
@@ -54,9 +56,12 @@
     </div>
   </div>
 </div>
-
-<h6>对话框</h6>
+<h6>对话框示例</h6>
 <button type="text" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Show"></button>
-<p-dialog header="对话框" [(visible)]="displayDialog">
+<p-dialog header="对话框" [(visible)]="displayDialog" minWidth="400">
   Content
+  <p-footer>
+    <p-button label="保存" styleClass="ui-button-save"></p-button>
+    <p-button label="取消" styleClass="ui-button-cancel"></p-button>
+  </p-footer>
 </p-dialog>
