@@ -1,0 +1,33 @@
+{
+	"login": {
+    "helpCenter": "帮助中心",
+    "title": "用户登录"
+	},
+  "register": {
+
+  },
+  "forgetpwd": {
+
+  },
+  "button": {
+    "add": "新增",
+    "edit": "修改",
+    "remove": "删除",
+    "query": "查询",
+    "exactQuery": "精确查询",
+    "refresh": "刷新",
+    "save": "保存",
+    "submit": "提交",
+    "ok": "确定",
+    "cancel": "取消"
+  },
+  "home": {
+    "tenant": {
+      "tenantInfo": {
+        "query": "精确查询",
+        "create": "新增租户",
+        "update": "更新租户信息"
+      }
+    }
+  }
+}

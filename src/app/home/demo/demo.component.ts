@@ -39,7 +39,7 @@ export class DemoComponent implements OnInit {
     console.log(this.dt.selections);
   }
 
-  public rowUnselect() {
+  public rowUnselect($event) {
     console.log(this.dt.selections);
   }
 

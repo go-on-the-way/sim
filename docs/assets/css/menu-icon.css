@@ -1,0 +1,113 @@
+/* first level menu */
+.menu-space {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/space.png") no-repeat left center / 100% 100%;
+}
+
+.menu-aptitudes {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/aptitudes.png") no-repeat left center / 100% 100%;
+}
+
+.menu-authority {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/authority.png") no-repeat left center / 100% 100%;
+}
+
+.menu-business {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/business.png") no-repeat left center / 100% 100%;
+}
+
+.menu-client {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/client.png") no-repeat left center / 100% 100%;
+}
+
+.menu-cost {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/cost.png") no-repeat left center / 100% 100%;
+}
+
+.menu-delivery {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/delivery.png") no-repeat left center / 100% 100%;
+}
+
+.menu-log {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/log.png") no-repeat left center / 100% 100%;
+}
+
+.menu-logistics {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/logistics.png") no-repeat left center / 100% 100%;
+}
+
+.menu-note {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/note.png") no-repeat left center / 100% 100%;
+}
+
+.menu-order {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/order.png") no-repeat left center / 100% 100%;
+}
+
+.menu-organization {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/organization.png") no-repeat left center / 100% 100%;
+}
+
+.menu-product {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/product.png") no-repeat left center / 100% 100%;
+}
+
+.menu-return {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/return.png") no-repeat left center / 100% 100%;
+}
+
+.menu-statistics {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/statistics.png") no-repeat left center / 100% 100%;
+}
+
+.menu-storage {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/storage.png") no-repeat left center / 100% 100%;
+}
+
+.menu-check {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/check.png") no-repeat left center / 100% 100%;
+}
+
+.menu-verify {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/verify.png") no-repeat left center / 100% 100%;
+}
+
+.menu-edit {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/edit.png") no-repeat left center / 100% 100%;
+}
+
+.menu-delete {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/delete.png") no-repeat left center / 100% 100%;
+}
+
+.menu-review {
+	margin-right: 15px!important;
+	background: url("../img/menu-icon/review.png") no-repeat left center / 100% 100%;
+}
+
+.menu-space {
+    width: 6px !important;
+    height: 6px !important;
+    background: #00a98d;
+    border-radius: 50%;
+    margin: 20px 9px 3px 32px !important;
+}
